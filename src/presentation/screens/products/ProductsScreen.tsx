@@ -38,7 +38,7 @@ export const ProductsScreen = () => {
       <Text style={{marginBottom:10, fontSize:30}}>Settings</Text>
       <PrimaryButton
         onPress={() => navigation.navigate('Settings')}
-        label="Ajustes"
+        label="Settings"
       />
     </View>
   )
