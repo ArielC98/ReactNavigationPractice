@@ -28,7 +28,7 @@ export const StackNavigator = () => {
         }
       }}
     >
-      <Stack.Group
+      {/* <Stack.Group
         screenOptions={({ navigation }) => ({
           presentation: 'transparentModal',
           headerLeft: () => (
@@ -37,12 +37,12 @@ export const StackNavigator = () => {
             </Pressable>
           ),
         })}
-      >
+      > */}
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Products" component={ProductsScreen} />
         <Stack.Screen name="Product" component={ProductScreen} />
         <Stack.Screen name="Settings" component={SettingsScreen} />
-      </Stack.Group>
+      {/* </Stack.Group> */}
     </Stack.Navigator>
   );
 }
