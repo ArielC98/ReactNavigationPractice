@@ -1,6 +1,6 @@
 
 import {  Text, View } from "react-native";
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from '@react-native-vector-icons/ionicons'
 
 
 export const Tab1Screen = () => {
