@@ -5,6 +5,7 @@ import { Pressable, Text } from 'react-native';
 import { DrawerActions } from '@react-navigation/native';
 import { TopTabsNavigator } from './TopTabsNavigator';
 import { StackNavigator } from './StackNavigator';
+import { IonIcon } from '../presentation/components/shared/IonIcon';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,6 +13,9 @@ export const BottomTabsNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+
+        tabBarActiveTintColor: globalColors.primary,
+
         sceneStyle: {
           backgroundColor: globalColors.background,
         },
@@ -31,16 +35,18 @@ export const BottomTabsNavigator = () => {
       <Tab.Group
         screenOptions={({ navigation }) => ({
           headerLeft: () => (
-            <Pressable onPress={() => navigation.dispatch(DrawerActions.toggleDrawer)}>
-              <Text>Menu</Text>
+            <Pressable
+              style = {{marginLeft: 5}}
+              onPress={() => navigation.dispatch(DrawerActions.toggleDrawer)}>
+              <IonIcon name="menu-outline" color = {globalColors.primary}/>
             </Pressable>
           ),
         })}
       >
 
-        <Tab.Screen name="Tab1" options={{ title: 'Tab 1', tabBarIcon: ({ color }) => (<Text style={{ color, fontSize: 12 }}>Tab1</Text>)}} component={Tab1Screen} />
-        <Tab.Screen name="Tab2" options={{ title: 'Tab 2', tabBarIcon: ({ color }) => (<Text style={{ color, fontSize: 12 }}>Tab2</Text>) }} component={TopTabsNavigator} />
-        <Tab.Screen name="Tab3" options={{ title: 'Tab 3', tabBarIcon: ({ color }) => (<Text style={{ color, fontSize: 12 }}>Tab3</Text>) }} component={StackNavigator} />
+        <Tab.Screen name="Tab1" options={{ title: 'Tab 1', tabBarIcon: ({ color }) => (<IonIcon name = "accessibility-outline" color = {color}/>) }} component={Tab1Screen} />
+        <Tab.Screen name="Tab2" options={{ title: 'Tab 2', tabBarIcon: ({ color }) => (<IonIcon name = "airplane-outline" color = {color}/>) }} component={TopTabsNavigator} />
+        <Tab.Screen name="Tab3" options={{ title: 'Tab 3', tabBarIcon: ({ color }) => (<IonIcon name = "bar-chart-outline" color = {color}/>) }} component={StackNavigator} />
       </Tab.Group>
     </Tab.Navigator>
   );

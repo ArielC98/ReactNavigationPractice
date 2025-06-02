@@ -1,6 +1,6 @@
 
 import {  Text, View } from "react-native";
-import Icon from '@react-native-vector-icons/ionicons'
+import { IonIcon } from "../../components/shared/IonIcon";
 
 
 export const Tab1Screen = () => {
@@ -10,7 +10,7 @@ export const Tab1Screen = () => {
     <View>
       <Text>Tab1Screen</Text>
 
-      <Icon name="rocket-outline" size={30} color="#900"/>
+      <IonIcon name="rocket-outline" size={30} color="purple"/>
     </View>
   )
 }
